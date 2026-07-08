@@ -1,2 +1,2 @@
 # Empower
-This is an employee management web application.
+This is an employee management website.
