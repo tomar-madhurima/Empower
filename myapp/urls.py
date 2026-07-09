@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('index/', home),
-    path('about/', about),    
+    path('about/', about),
     path('service/', service),
-    path('empower/', include('empower.urls'))
+    path('empower/', include('Employee.urls'))
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

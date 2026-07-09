@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('empower', '0001_initial'),
+        ('Employee', '0001_initial'),
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=200)),
                 ('testimonial', models.TextField()),
                 ('picture', models.ImageField(upload_to='testimonials/')),
-                ('rating', models.IntegerField(max_length=1)),
+                ('rating', models.IntegerField()),
             ],
         ),
     ]

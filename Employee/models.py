@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class empower(models.Model):
+class Empower(models.Model):
     name = models.CharField(max_length = 200)
     emp_ID = models.CharField(max_length = 200)
     phone = models.CharField(max_length = 10)
@@ -14,6 +14,6 @@ class Testimonial(models.Model):
     name = models.CharField(max_length=200)
     testimonial = models.TextField()
     picture = models.ImageField(upload_to="testimonials/")
-    rating = models.IntegerField(max_length=1) 
+    rating = models.IntegerField()
     def __str__(self):
         return self.testimonial

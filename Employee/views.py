@@ -1,11 +1,11 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import empower, Testimonial
+from .models import Empower, Testimonial
 # Create your views here.
 def empower_home(request):
-    employees = empower.objects.all()
+    employees = Empower.objects.all()
     return render(request, "empower/home.html", {
-        "employees":employees
+        "employees": employees
     })
 def add_emp(request):
     if request.method == "POST":
@@ -17,7 +17,7 @@ def add_emp(request):
         employee_working = request.POST.get("employee_working")
         employee_department = request.POST.get("employee_department")
 
-        e = empower()
+        e = Empower()
         e.name = employee_name
         e.emp_ID = employee_id
         e.phone = employee_phone
@@ -32,13 +32,13 @@ def add_emp(request):
     return render(request, "empower/add_emp.html",{})
 def delete_emp(request, emp_id):
     #print(emp_id)
-    emp = empower.objects.get(pk = emp_id)
+    emp = Empower.objects.get(pk=emp_id)
     emp.delete()
     return redirect("/empower/home/")
 def update_emp(request, emp_id):
-    emp = empower.objects.get(pk = emp_id)
+    emp = Empower.objects.get(pk=emp_id)
     return render(request, "empower/update_emp.html", {
-        'emp':emp
+        'emp': emp
     })
 def do_update_emp(request, emp_id):
     if request.method == 'POST':
@@ -48,7 +48,7 @@ def do_update_emp(request, emp_id):
         employee_address = request.POST.get("employee_address")
         employee_working = request.POST.get("employee_working")
         employee_department = request.POST.get("employee_department")
-        e = empower.objects.get(pk = emp_id)
+        e = Empower.objects.get(pk=emp_id)
         e.name = employee_name
         e.emp_ID = employee_id
         e.phone = employee_phone
