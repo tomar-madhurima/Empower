@@ -10,7 +10,7 @@ def home(request):
         if check is None: isActive = False
         else: isActive = True
     date = datetime.datetime.now()
-    name = "themadhurima"
+    name = "Madhurima"
     list_of_programs = [
         'WAP to check even or odd',
         'WAP to check prime numbers',
@@ -18,9 +18,9 @@ def home(request):
         'WAP to print pascals triangle'
     ]
     student = {
-        'student_name': "Madhurima",
+        'student_name': "NIL",
         'student_college': "XYZ",
-        'student_city': "Lucknow"
+        'student_city': "abc"
     }
     data = {
         'date':date,
